@@ -413,7 +413,7 @@ function status(msg, kind = "", ms = kind === "err" ? 8000 : 3500) {
   const end = (w) => status.t = setTimeout(() => { s.textContent = ""; s.className = "status"; }, w);
   s.onmouseenter = () => clearTimeout(status.t);
   s.onmouseleave = () => end(2000);
-  end(Math.max(ms, msg.length * 80));
+  end(Math.min(10000, Math.max(ms, msg.length * 80)));
 }
 
 // ---------- agents view ----------
