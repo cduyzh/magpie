@@ -11786,7 +11786,7 @@ function renderModels(p) {
   };
   // each model the agents see gets a tiny request of its own: a vendor
   // that answers can still have a model that doesn't
-  const testAll = testButton(p, t("Test models"), t("Send a tiny request to each model agents see, to find the ones that don't answer") + "\n" + t("Right-click a model to test just it"), async () => {
+  const testAll = testButton(p, t("Test models"), t("Send a tiny request to each model agents see, to find the ones that don't answer") + "\n" + t("Tests use the preferred account/key by default.") + "\n" + t("Right-click a model to test just it"), async () => {
     const ids = servedIds(p).filter((id) => p.decideTest || !decidesModel(p, id));
     if (!ids.length) { status(t("Pick a model first."), "err"); return; }
     const got = modelTests[p.id] = {};
